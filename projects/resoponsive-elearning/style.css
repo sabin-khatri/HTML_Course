@@ -383,3 +383,65 @@ nav #menu-close {
     font-weight: 600;
     color: #545454;
   }
+
+  #course {
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+  }
+  
+  #course p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  
+  #course .course-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2.5rem;
+    margin-top: 50px;
+  }
+  
+  #course .courses {
+    text-align: start;
+    background: #f9f9ff;
+    height: 100%;
+    transition: 0.3s ease;
+  }
+  
+  #course .courses:hover {
+    transform: scale(1.15);
+  }
+  
+  #course .courses .details {
+    padding: 15px 15px 0 15px;
+    line-height: 30px;
+  }
+  
+  #course .courses .cost {
+    background-color: #424067;
+    color: white;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 25px;
+    width: 100px;
+    transition: 0.3s ease;
+  }
+  
+  #course .courses .cost:hover {
+    color: #fff;
+    background-color: #a138ef;
+  }
+  
+  #course .courses .details .star {
+    color: #fdc93b;
+    font-size: 0.9rem;
+  }
+  
+  #course .courses img {
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: center;
+  }

@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-color: #4a148c; /* Deeper Purple */
+  --secondary-color: #7c4dff; /* Lighter Purple Accent */
+  --text-color: #333; /* Darker Gray for better contrast */
+  --light-gray: #f8f9fa;
+  --white: #fff;
+  --nav-height: 70px; /* Define nav height */
+  --transition-speed: 0.3s;
+}
+
+/* Global tags */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Added fallback font */
+  color: var(--text-color);
+  background-color: var(--white); /* Explicit background */
+}
+
+h1 {
+  font-size: 2.5rem; /* Slightly adjusted */
+  font-weight: 700; /* Increased weight */
+  color: var(--text-color);
+  letter-spacing: 0.5px; /* Reduced letter-spacing */
+}
+
+span {
+  font-size: 0.9rem;
+  color: #555; /* Slightly darker */
+}
+
+h6 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color); /* Use primary color for links */
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  width: 100%;
+  height: var(--nav-height); /* Use variable */
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw; /* Use vw for horizontal padding, 0 for vertical */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  z-index: 1000; /* Higher z-index */
+  transition: background-color var(--transition-speed) ease; /* Smooth transitions */
+}
+
+nav .logo {
+  width: 90px; /* Slightly smaller logo */
+  cursor: pointer;
+}
+
+nav .navigation {
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop Navigation Links */
+nav .navigation ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0; /* Reset margin */
+}
+
+nav .navigation ul li {
+  margin-left: 35px; /* Increased spacing */
+}
+
+nav .navigation ul li a {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px; /* Reduced letter-spacing */
+  position: relative; /* For hover effect */
+  padding: 5px 0; /* Add some padding for hover */
+  transition: color var(--transition-speed) ease;
+}
+
+/* Modern Hover Effect */
+nav .navigation ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--secondary-color);
+  transition: width var(--transition-speed) ease;
+  -webkit-transition: width var(--transition-speed) ease;
+}
+
+nav .navigation ul li a:hover::after {
+  width: 100%;
+  left: 0;
+  background-color: var(--secondary-color);
+}
+
+nav .navigation ul li a:hover,
+nav .navigation ul li a.active { /* Style for active link if needed */
+  color: var(--primary-color);
+}
+
+/* Icons container */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 30px; /* Space between links and icons */
+}
+
+/* Profile Picture */
+nav .profile-pic {
+  width: 45px; /* Slightly smaller */
+  height: 45px;
+  border-radius: 50%; /* Make it round */
+  cursor: pointer;
+  object-fit: cover; /* Ensure image covers space well */
+  border: 2px solid var(--light-gray); /* Subtle border */
+  transition: transform var(--transition-speed) ease;
+}
+
+nav .profile-pic:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Hamburger Menu Icon (Hidden on Desktop) */
+nav #menu-btn {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem; /* Adjust size */
+  color: var(--text-color);
+  cursor: pointer;
+  margin-left: 20px; /* Space from profile pic */
+}
+
+/* Close Menu Icon (Hidden on Desktop & initially in mobile) */
+nav #menu-close {
+  display: none; /* Hidden by default */
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 4vw; /* Adjust padding for smaller screens */
+  }
+
+  nav .logo {
+      width: 80px; /* Slightly smaller logo on mobile */
+  }
+  
+  /* Show Hamburger Icon */
+  nav #menu-btn {
+    display: block;
+  }
+
+  /* Style the Mobile Menu Container (UL) */
+  nav .navigation ul {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start off-screen */
+    width: 250px;
+    height: 100vh; /* Full height */
+    background: var(--white);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    justify-content: flex-start; /* Start items from the top */
+    padding: 80px 0 0 30px; /* Add padding top (below nav) and left */
+    transition: right var(--transition-speed) ease-in-out; /* Smooth slide */
+    z-index: 1001; /* Above the nav overlay */
+  }
+
+  /* Active state for mobile menu (when hamburger is clicked) */
+  nav .navigation ul.active {
+    right: 0; /* Slide in */
+  }
+
+  /* Style Mobile Menu Links */
+  nav .navigation ul li {
+    margin: 15px 0; /* Vertical spacing */
+    width: 100%; /* Make links take full width */
+  }
+
+  nav .navigation ul li a {
+    font-size: 1.1rem; /* Slightly larger font for mobile */
+    color: var(--text-color);
+  }
+  nav .navigation ul li a:hover,
+  nav .navigation ul li a.active {
+    color: var(--primary-color);
+  }
+   nav .navigation ul li a::after {
+      display: none; /* Remove underline effect on mobile nav */
+   }
+
+  /* Style and Show Close Button */
+  nav .navigation ul #menu-close {
+    display: block; /* Show close button */
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 1.8rem; /* Make it easily clickable */
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease;
+  }
+   nav .navigation ul #menu-close:hover {
+       color: var(--primary-color);
+       transform: rotate(90deg);
+   }
+
+   /* Adjust icon spacing on mobile */
+    .nav-icons {
+        margin-left: 0; /* Remove margin */
+    }
+    nav .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+     nav #menu-btn {
+         margin-left: 15px; /* Reduce space between profile and menu icons */
+     }
+}
+
+/* Smaller mobile screens adjustments (optional) */
+@media (max-width: 480px) {
+    nav {
+        padding: 0 3vw;
+    }
+    nav .logo {
+        width: 70px;
+    }
+    nav .navigation ul {
+        width: 220px; /* Slightly narrower menu */
+        right: -220px; 
+        padding: 70px 0 0 20px; 
+    }
+     nav .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+     nav #menu-btn {
+         font-size: 1.4rem;
+         margin-left: 12px; 
+     }
+      nav .navigation ul #menu-close {
+          top: 18px;
+          right: 20px;
+          font-size: 1.6rem; 
+      }
+}

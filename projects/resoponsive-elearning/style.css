@@ -445,3 +445,72 @@ nav #menu-close {
     background-size: cover;
     background-position: center;
   }
+  #community {
+    padding: 8vw 8vw 8vw 8vw;
+    text-align: center;
+  }
+  
+  #community .community-para {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  
+  #community p {
+    font-size: 1.2rem;
+    color: #545454;
+  }
+  
+  #community .expert-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+  }
+  
+  #community .expert-box .profile {
+    background-color: #fafaf1;
+    padding: 30px 10px;
+    line-height: 30px;
+  }
+  
+  #community .expert-box .profile img {
+    width: 180px;
+  }
+  
+  .social {
+    margin-top: 20px;
+  }
+  
+  .social i {
+    font-size: 2rem;
+    padding: 5px 10px;
+    border: 1px solid #424067;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .social .fa-facebook-f:hover {
+    background-color: #3b5998;
+    color: #fff;
+    border-color: #3b5998;
+  }
+  
+  .social .fa-instagram:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+    color: #fff;
+    border-color: purple;
+  }
+  
+  .social .fa-linkedin-in:hover {
+    background-color: #0a66c2;
+    color: #fff;
+    border-color: #0a66c2;
+  }

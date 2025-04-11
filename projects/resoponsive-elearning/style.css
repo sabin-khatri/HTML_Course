@@ -334,3 +334,52 @@ nav #menu-close {
     background-color: #a138ef;
     transition: 0.3s ease;
   }
+
+  
+/* Features */
+#features {
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
+  }
+  
+  #features p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  
+  #features .feature-base {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2.5rem;
+    margin-top: 50px;
+  }
+  
+  #features .feature-box {
+    background: #f9f9ff;
+    text-align: start;
+    padding: 50px;
+    transition: 0.3s ease;
+  }
+  
+  #features .feature-box:hover {
+    transform: scale(1.15);
+  }
+  
+  #features .feature-box i {
+    font-size: 2.3rem;
+    color: #424067;
+  }
+  
+  #features .feature-box h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #424067;
+    padding: 13px 0 7px 0;
+  }
+  
+  #features .feature-box p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #545454;
+  }

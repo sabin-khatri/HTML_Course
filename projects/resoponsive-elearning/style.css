@@ -280,3 +280,57 @@ nav #menu-close {
           font-size: 1.6rem; 
       }
 }
+#home {
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)),
+      url("Images/home_background-2.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+  }
+  
+  #home h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+  
+  #home p {
+    font-size: 0.9rem;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 25px;
+  }
+  
+  #home a {
+    color: #a138ef;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+  
+  #home .btn {
+    margin-top: 30px;
+  }
+  
+  #home .btn .btn-one:hover {
+    color: #fff;
+    background-color: #a138ef;
+    transition: 0.3s ease;
+  }
+  
+  #home .btn .btn-two:hover {
+    color: #fff;
+    background-color: #a138ef;
+    transition: 0.3s ease;
+  }

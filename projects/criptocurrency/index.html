@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptox- buy, Sell and Trade Crypto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+          tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-orange': {
+              DEFAULT: '#F97316',
+              light: '#FB923C',
+              dark: '#EA580C',
+            },
+            'dark-bg': '#0F0F0F',
+            'card-bg': '#1E1E1E',
+            'input-bg': '#2D2D2D',
+            'border-dark': '#3A3A3A',
+          },
+          fontFamily: {
+            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+          },
+          boxShadow: {
+            'orange-glow': '0 0 15px 5px rgba(249, 115, 22, 0.3)',
+          }
+        }
+      }
+    }
+    </script>
+    <style>
+        body::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to bottom, rgba(249, 115, 22, 0.4), transparent);
+            z-index: 10;
+        }
+        body {
+            position: relative;
+            background-color: #0f0f0f;
+        }
+        .hero-graphic img {
+      max-width: 100%;
+      height: auto;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.02); }
+    }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+    <div class="container mx-auto px-4 sm:px-6 ls:px-8 max-w-7xl">
+        <header class="py-4 md:py-6 relative z-20">
+            <div class="flex justify-between items-center">
+              <a href="#" class="flex items-center space-x-2 text-2xl font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 10.586V6zM8 4a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm10 6a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zm-2 4a1 1 0 100 2h2a1 1 0 100-2h-2zm-4-8a1 1 0 10-2 0v2a1 1 0 102 0V6zm-1 7a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" /></svg>
+                <span class="text-white">Cryptox</span>
+              </a>
+              <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="explore.html" class="text-gray-300 hover:text-brand-orange transition">Explore</a>
+                <a href="price.html" class="text-gray-300 hover:text-brand-orange transition">Price</a>
+                <a href="why.html" class="text-gray-300 hover:text-brand-orange transition">Why Cryptox?</a>
+                <a href="learn.html" class="text-gray-300 hover:text-brand-orange transition">Learn</a>
+                <a href="support.html" class="text-gray-300 hover:text-brand-orange transition">Support</a>
+              </nav>
+              <div class="hidden md:flex items-center space-x-4">
+                <a href="login.html" class="text-gray-300 hover:text-white border border-border-dark rounded-md px-5 py-2 text-sm transition hover:border-brand-orange">Login</a>
+                <a href="signup.html" class="bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-5 py-2 text-sm transition shadow-sm hover:shadow-md">Sign Up</a>
+              </div>
+              <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                </button>
+              </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 bg-card-bg p-4 rounded-md">
+              <a href="explore.html" class="block text-gray-300 hover:text-brand-orange transition py-1">Explore</a>
+              <a href="price.html" class="block text-gray-300 hover:text-brand-orange transition py-1">Price</a>
+              <a href="#" class="block text-gray-300 hover:text-brand-orange transition py-1">Why Cryptox?</a>
+              <a href="learn.html" class="block text-gray-300 hover:text-brand-orange transition py-1">Learn</a>
+              <a href="support.html" class="block text-gray-300 hover:text-brand-orange transition py-1">Support</a>
+              <div class="pt-4 border-t border-border-dark space-y-3">
+                <a href="login.html" class="block text-center w-full text-gray-300 hover:text-white border border-border-dark rounded-md px-5 py-2 text-sm hover:border-brand-orange">Login</a>
+                <a href="signup.html" class="block text-center w-full bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-5 py-2 text-sm shadow-sm hover:shadow-md">Sign Up</a>
+              </div>
+            </div>
+          </header>
+
+    </div>
+    
+
+
+
+</body>
+</html>

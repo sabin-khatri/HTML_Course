@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ProCom Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            @apply bg-white text-gray-800;
+        }
+        .title-underline::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            @apply bg-blue-500 mx-auto mt-2 rounded-sm;
+        }
+        #mobile-menu-button .menu-icon { display: block; }
+        #mobile-menu-button .close-icon { display: none; }
+        #mobile-menu-button[aria-expanded="true"] .menu-icon { display: none; }
+        #mobile-menu-button[aria-expanded="true"] .close-icon { display: block; }
+    </style>
+</head>
+<body class="transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-6 py-3 flex justify-between items-center relative">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">ProCom Nepal</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                <a href="training.html" class="text-gray-700 hover:text-blue-600 transition-colors">Training</a>
+                <a href="portfolio.html" class="text-blue-600 font-medium transition-colors">Portfolio</a>
+            </div>
+
+            <!-- Header Controls (Right Side) -->
+            <div class="flex items-center space-x-3">
+               
+
+                <a href="contact.html" class="bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-4 rounded-md transition-colors hidden sm:inline-block">Contact Us</a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+
+             <!-- Mobile Menu Container -->
+             <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 z-40">
+                <div class="container mx-auto px-4 flex flex-col space-y-3">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="services.html" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="training.html" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Training</a>
+                    <a href="portfolio.html" class="block py-2 text-blue-600 font-medium transition-colors">Portfolio</a>
+                    <a href="contact.html" class="block py-2 mt-2 bg-red-600 hover:bg-red-700 text-white text-center font-medium rounded-md transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Portfolio Section Content -->
+        <section id="portfolio" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 lg:mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 title-underline">Our Portfolio</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        Showcasing some of the projects we're proud to have delivered for our clients.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden group" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laptop with code on screen" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Client Website Redesign</h3>
+                            <p class="text-sm text-gray-600 mb-4">Category: Web Development, UI/UX</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Project →</a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Person making online payment" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Platform</h3>
+                            <p class="text-sm text-gray-600 mb-4">Category: Web Development, Cloud</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Project →</a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone showing apps" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile App Development</h3>
+                            <p class="text-sm text-gray-600 mb-4">Category: Software Development</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Project →</a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 4 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden group" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team collaborating on design" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Corporate Branding Package</h3>
+                            <p class="text-sm text-gray-600 mb-4">Category: Graphic Design</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Project →</a>
+                        </div>
+                    </div>
+
+                     <!-- Portfolio Item 5 -->
+                     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Desk with laptop showing charts" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Analysis Dashboard</h3>
+                            <p class="text-sm text-gray-600 mb-4">Category: AI & Machine Learning</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Project →</a>
+                        </div>
+                    </div>
+
+                     <!-- Portfolio Item 6 -->
+                     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Camera lens close up" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Event Photography & Video</h3>
+                            <p class="text-sm text-gray-600 mb-4">Category: Photography & Videography</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Project →</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+     <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600 text-sm">
+            © 2024 ProCom Nepal. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js" defer></script>
+
+</body>
+</html>

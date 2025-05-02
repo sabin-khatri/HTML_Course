@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cryptox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-orange': {
+                DEFAULT: '#F97316',
+                light: '#FB923C',
+                dark: '#EA580C',
+              },
+              'dark-bg': '#0F0F0F',
+              'card-bg': '#1E1E1E',
+              'input-bg': '#2D2D2D',
+              'border-dark': '#3A3A3A',
+            },
+            fontFamily: {
+              sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+            },
+            boxShadow: {
+               'orange-glow': '0 0 15px 5px rgba(249, 115, 22, 0.3)',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(to bottom, rgba(249, 115, 22, 0.4), transparent);
+        z-index: 10;
+      }
+      body {
+        position: relative;
+        background-color: #0F0F0F;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+       .container {
+        flex-grow: 1;
+       }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
+        <header class="py-4 md:py-6 relative z-20">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 10.586V6zM8 4a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm10 6a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zm-2 4a1 1 0 100 2h2a1 1 0 100-2h-2zm-4-8a1 1 0 10-2 0v2a1 1 0 102 0V6zm-1 7a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" /> </svg>
+                    <span class="text-white">Cryptox</span>
+                </a>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="explore.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Explore</a>
+                    <a href="price.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Price</a>
+                    <a href="why.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Why Critox?</a>
+                    <a href="learn.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Learn</a>
+                    <a href="support.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Support</a>
+                </nav>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-brand-orange font-semibold border border-brand-orange rounded-md px-5 py-2 text-sm transition duration-200">Login</a>
+                    <a href="signup.html" class="bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-5 py-2 text-sm font-medium transition duration-200 shadow-sm hover:shadow-md">Sign Up</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 bg-card-bg p-4 rounded-md">
+                <a href="explore.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Explore</a>
+                <a href="price.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Price</a>
+                <a href="why.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Why Critox?</a>
+                <a href="learn.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Learn</a>
+                <a href="support.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Support</a>
+                <div class="pt-4 border-t border-border-dark space-y-3">
+                     <a href="login.html" class="block text-center w-full text-brand-orange font-semibold border border-brand-orange rounded-md px-5 py-2 text-sm transition duration-200">Login</a>
+                    <a href="signup.html" class="block text-center w-full bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-5 py-2 text-sm font-medium transition duration-200 shadow-sm hover:shadow-md">Sign Up</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="py-12 md:py-20 flex items-center justify-center">
+            <div class="bg-card-bg p-8 md:p-10 rounded-lg shadow-lg w-full max-w-md">
+                <h1 class="text-3xl font-bold mb-8 text-center text-brand-orange">Login to Cryptox</h1>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                        <input type="email" name="email" id="email" required
+                               class="w-full bg-input-bg border border-border-dark rounded-md px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-brand-orange text-white placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                        <input type="password" name="password" id="password" required
+                               class="w-full bg-input-bg border border-border-dark rounded-md px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-brand-orange text-white placeholder-gray-500">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox"
+                                   class="h-4 w-4 rounded border-gray-600 text-brand-orange focus:ring-brand-orange bg-input-bg">
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-400">Remember me</label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="forgot-password.html" class="font-medium text-brand-orange hover:underline">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit"
+                                class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-8 py-3 font-semibold transition duration-200 shadow-sm hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-bg focus:ring-brand-orange">
+                            Log In
+                        </button>
+                    </div>
+                </form>
+                <p id="login-status" class="mt-4 text-sm text-center h-5"></p>
+                <p class="text-center text-sm text-gray-400 mt-6">
+                    Don't have an account?
+                    <a href="signup.html" class="font-medium text-brand-orange hover:underline">
+                        Sign Up
+                    </a>
+                </p>
+            </div>
+        </main>
+
+        <footer class="text-center py-8 border-t border-border-dark">
+            <p class="text-gray-500">© 2023 Cryptox. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const emailForm = document.querySelector('form#email-signup-form');
+    const supportForm = document.getElementById('support-form');
+    const signupForm = document.getElementById('signup-form');
+    const loginForm = document.getElementById('login-form');
+    const formStatus = document.getElementById('form-status');
+    const signupStatus = document.getElementById('signup-status');
+    const loginStatus = document.getElementById('login-status');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    if (emailForm) {
+        emailForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const emailInput = emailForm.querySelector('input[type="email"]');
+            if (emailInput) {
+                 const email = emailInput.value;
+                 if (email && email.includes('@')) {
+                    console.log('Email submitted:', email);
+                    alert(`Thank you for signing up with ${email}! (Placeholder)`);
+                    emailInput.value = '';
+                 } else {
+                     alert('Please enter a valid email address.');
+                 }
+            } else {
+                console.log("Email signup form not found or input missing.");
+            }
+        });
+    }
+
+    if (supportForm && formStatus) {
+        supportForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            formStatus.textContent = 'Sending message...';
+            formStatus.className = 'mt-4 text-sm text-center text-yellow-400';
+            const formData = new FormData(supportForm);
+            console.log('Support Form Submitted:', Object.fromEntries(formData));
+
+            setTimeout(() => {
+                formStatus.textContent = 'Your message has been sent successfully! (Placeholder)';
+                formStatus.className = 'mt-4 text-sm text-center text-green-400';
+                supportForm.reset();
+                setTimeout(() => formStatus.textContent = '', 3000);
+            }, 1500);
+        });
+    }
+
+    if (signupForm && signupStatus) {
+        signupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            signupStatus.textContent = '';
+            signupStatus.className = 'mt-4 text-sm text-center h-5';
+
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+            const termsInput = document.getElementById('terms');
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (password.length < 8) {
+                 signupStatus.textContent = 'Password must be at least 8 characters long.';
+                 signupStatus.className = 'mt-4 text-sm text-center text-red-500 h-5';
+                 passwordInput.focus();
+                 return;
+            }
+            if (password !== confirmPassword) {
+                 signupStatus.textContent = 'Passwords do not match.';
+                 signupStatus.className = 'mt-4 text-sm text-center text-red-500 h-5';
+                 confirmPasswordInput.focus();
+                 return;
+            }
+            if (!termsInput.checked) {
+                 signupStatus.textContent = 'Please agree to the Terms of Service.';
+                 signupStatus.className = 'mt-4 text-sm text-center text-red-500 h-5';
+                 termsInput.focus();
+                 return;
+            }
+
+            signupStatus.textContent = 'Creating account...';
+            signupStatus.className = 'mt-4 text-sm text-center text-yellow-400 h-5';
+            const formData = new FormData(signupForm);
+            formData.delete('confirm-password');
+            console.log('Signup Form Submitted:', Object.fromEntries(formData));
+
+            setTimeout(() => {
+                signupStatus.textContent = 'Account created successfully! Redirecting...';
+                signupStatus.className = 'mt-4 text-sm text-center text-green-400 h-5';
+                signupForm.reset();
+                setTimeout(() => {
+                   window.location.href = 'login.html';
+                }, 1500);
+            }, 2000);
+        });
+    }
+
+     if (loginForm && loginStatus) {
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            loginStatus.textContent = '';
+            loginStatus.className = 'mt-4 text-sm text-center h-5';
+
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            if (!email || !password) {
+                loginStatus.textContent = 'Please enter both email and password.';
+                loginStatus.className = 'mt-4 text-sm text-center text-red-500 h-5';
+                if (!email) emailInput.focus(); else passwordInput.focus();
+                return;
+            }
+             if (!email.includes('@')) {
+                loginStatus.textContent = 'Please enter a valid email address.';
+                loginStatus.className = 'mt-4 text-sm text-center text-red-500 h-5';
+                emailInput.focus();
+                return;
+            }
+
+            loginStatus.textContent = 'Logging in...';
+            loginStatus.className = 'mt-4 text-sm text-center text-yellow-400 h-5';
+
+            const formData = new FormData(loginForm);
+            console.log('Login Form Submitted:', Object.fromEntries(formData));
+
+            setTimeout(() => {
+                if (email === "user@example.com" && password === "password123") {
+                    loginStatus.textContent = 'Login successful! Redirecting...';
+                    loginStatus.className = 'mt-4 text-sm text-center text-green-400 h-5';
+                    loginForm.reset();
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    loginStatus.textContent = 'Invalid email or password.';
+                    loginStatus.className = 'mt-4 text-sm text-center text-red-500 h-5';
+                }
+            }, 1500);
+        });
+    }
+});
+</script>

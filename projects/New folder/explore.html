@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Crypto Assets - Cryptox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-orange': {
+                DEFAULT: '#F97316',
+                light: '#FB923C',
+                dark: '#EA580C',
+              },
+              'dark-bg': '#0F0F0F',
+              'card-bg': '#1E1E1E',
+              'input-bg': '#2D2D2D',
+              'border-dark': '#3A3A3A',
+            },
+            fontFamily: {
+              sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+            },
+            boxShadow: {
+               'orange-glow': '0 0 15px 5px rgba(249, 115, 22, 0.3)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(to bottom, rgba(249, 115, 22, 0.4), transparent);
+        z-index: 10;
+      }
+      body {
+        position: relative;
+        background-color: #0F0F0F;
+      }
+       .price-up { color: #10B981; }
+      .price-down { color: #EF4444; }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
+        <header class="py-4 md:py-6 relative z-20">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 10.586V6zM8 4a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm10 6a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zm-2 4a1 1 0 100 2h2a1 1 0 100-2h-2zm-4-8a1 1 0 10-2 0v2a1 1 0 102 0V6zm-1 7a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" /> </svg>
+                    <span class="text-white">Cryptox</span>
+                </a>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="explore.html" class="text-brand-orange font-semibold transition duration-200">Explore</a>
+                    <a href="price.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Price</a>
+                    <a href="why.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Why Critox?</a>
+                    <a href="learn.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Learn</a>
+                    <a href="support.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Support</a>
+                </nav>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-300 hover:text-white border border-border-dark rounded-md px-5 py-2 text-sm font-medium transition duration-200 hover:border-brand-orange">Login</a>
+                    <a href="signup.html" class="bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-5 py-2 text-sm font-medium transition duration-200 shadow-sm hover:shadow-md">Sign Up</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 bg-card-bg p-4 rounded-md">
+                <a href="explore.html" class="block text-brand-orange font-semibold transition duration-200 py-1">Explore</a>
+                <a href="price.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Price</a>
+                <a href="why.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Why Critox?</a>
+                <a href="learn.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Learn</a>
+                <a href="support.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Support</a>
+                <div class="pt-4 border-t border-border-dark space-y-3">
+                     <a href="login.html" class="block text-center w-full text-gray-300 hover:text-white border border-border-dark rounded-md px-5 py-2 text-sm font-medium transition duration-200 hover:border-brand-orange">Login</a>
+                    <a href="signup.html" class="block text-center w-full bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-5 py-2 text-sm font-medium transition duration-200 shadow-sm hover:shadow-md">Sign Up</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="py-16 md:py-24">
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-brand-orange">Explore the Crypto Universe</h1>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Discover new opportunities, trending assets, and dive into different sectors of the crypto market.
+                </p>
+            </div>
+
+            <section class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-8 text-white">Trending Coins</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+                    <div class="bg-card-bg p-6 rounded-lg flex flex-col items-center text-center hover:shadow-lg hover:shadow-brand-orange/20 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
+                         <svg class="h-10 w-10 text-yellow-500 mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1.79-4.43a.5.5 0 00-.64-.77 5.01 5.01 0 00-3.18 1.49.5.5 0 10.7.7 4.01 4.01 0 012.53-1.19.5.5 0 00.59-.23zm-3.24-2.29a.5.5 0 00-.77.64 5.003 5.003 0 001.49 3.18.5.5 0 00.7-.7 4.003 4.003 0 01-1.19-2.53.5.5 0 00-.23-.59zm5.05-1.48a.5.5 0 10-.7-.7 4.01 4.01 0 00-2.53 1.19.5.5 0 10.7.7 5.01 5.01 0 013.18-1.49.5.5 0 00.35-.7zM8.4 6.57a.5.5 0 00.64.77 5.01 5.01 0 003.18-1.49.5.5 0 10-.7-.7A4.01 4.01 0 019 6.35a.5.5 0 00-.6.22z" clip-rule="evenodd"/> </svg>
+                         <h3 class="text-lg font-semibold mb-1">Bitcoin <span class="text-gray-500 text-sm">BTC</span></h3>
+                         <p class="text-xl font-medium mb-1">$68,450.75</p>
+                         <p class="text-sm price-up">+1.25%</p>
+                    </div>
+
+                    <div class="bg-card-bg p-6 rounded-lg flex flex-col items-center text-center hover:shadow-lg hover:shadow-brand-orange/20 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
+                         <svg class="h-10 w-10 text-indigo-400 mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"> <path d="M10.001 6.813l4.432 2.536-4.432 7.72L5.568 9.35l4.433-2.537zM10 3l-5.5 9.537 5.5 5.463 5.5-5.463L10 3z"/> </svg>
+                         <h3 class="text-lg font-semibold mb-1">Ethereum <span class="text-gray-500 text-sm">ETH</span></h3>
+                         <p class="text-xl font-medium mb-1">$3,780.10</p>
+                         <p class="text-sm price-down">-0.55%</p>
+                    </div>
+
+                    <div class="bg-card-bg p-6 rounded-lg flex flex-col items-center text-center hover:shadow-lg hover:shadow-brand-orange/20 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
+                         <svg class="h-10 w-10 text-cyan-400 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0-1.036.84-1.875 1.875-1.875h.375m-.375 0h.375a1.875 1.875 0 0 1 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875h-.375m.375 0h-.375a1.875 1.875 0 0 1-1.875-1.875v-.75Zm9.75 2.25a8.966 8.966 0 0 0-.509-3.004 8.966 8.966 0 0 0-3.004-.509m3.513 3.513A8.966 8.966 0 0 1 15 15.75c-1.036 0-1.875-.84-1.875-1.875h.375m1.5 0a1.5 1.5 0 0 1 1.5 1.5v.75c0 1.036.84 1.875 1.875 1.875h.375m-1.5 0a1.5 1.5 0 0 1-1.5-1.5v-.75c0-1.036-.84-1.875-1.875-1.875h-.375m-1.5 0" /> </svg>
+                         <h3 class="text-lg font-semibold mb-1">Solana <span class="text-gray-500 text-sm">SOL</span></h3>
+                         <p class="text-xl font-medium mb-1">$165.30</p>
+                         <p class="text-sm price-up">+3.10%</p>
+                    </div>
+
+                     <div class="bg-card-bg p-6 rounded-lg flex flex-col items-center text-center hover:shadow-lg hover:shadow-brand-orange/20 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
+                         <svg class="h-10 w-10 text-blue-400 mb-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"> <path d="M13.113 1.977a1.84 1.84 0 0 0-2.226 0L1.14 9.857a1.75 1.75 0 0 0 0 2.286l9.747 7.88a1.84 1.84 0 0 0 2.226 0l9.747-7.88a1.75 1.75 0 0 0 0-2.286L13.113 1.977zM12 14.89l5.703-4.588-1.861-1.506L12 11.924l-3.842-3.128-1.86 1.506L12 14.89zm0 3.128l-5.703-4.588 1.86-1.506L12 15.05l3.842-3.128 1.86 1.506L12 18.018z"/> </svg>
+                         <h3 class="text-lg font-semibold mb-1">Ripple <span class="text-gray-500 text-sm">XRP</span></h3>
+                         <p class="text-xl font-medium mb-1">$0.5210</p>
+                         <p class="text-sm price-up">+2.10%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-8 text-white">Explore Sectors</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                     <div class="bg-card-bg p-8 rounded-lg shadow-lg hover:shadow-brand-orange/15 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" /> </svg>
+                            <h3 class="text-xl font-semibold text-white">DeFi (Decentralized Finance)</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Explore lending, borrowing, staking, and yield farming opportunities on decentralized platforms.</p>
+                        <a href="#" class="text-brand-orange hover:text-brand-orange-light font-medium">Discover DeFi Projects →</a>
+                    </div>
+
+                    <div class="bg-card-bg p-8 rounded-lg shadow-lg hover:shadow-brand-orange/15 transition duration-300">
+                         <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /> </svg>
+                            <h3 class="text-xl font-semibold text-white">NFTs & Collectibles</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Browse unique digital art, collectibles, virtual land, and more in the world of Non-Fungible Tokens.</p>
+                        <a href="#" class="text-brand-orange hover:text-brand-orange-light font-medium">Explore NFT Marketplaces →</a>
+                    </div>
+
+                    <div class="bg-card-bg p-8 rounded-lg shadow-lg hover:shadow-brand-orange/15 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange mr-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 9.75V10.5" /> </svg>
+                            <h3 class="text-xl font-semibold text-white">Gaming & Metaverse</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Dive into play-to-earn economies, virtual worlds, and ownable in-game assets powered by blockchain.</p>
+                        <a href="#" class="text-brand-orange hover:text-brand-orange-light font-medium">Enter the Metaverse →</a>
+                    </div>
+
+                    <div class="bg-card-bg p-8 rounded-lg shadow-lg hover:shadow-brand-orange/15 transition duration-300">
+                         <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange mr-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21M9 17.25v-4.5M9 17.25H5.25m13.5-9H18M9 17.25h4.5m4.5-9H18m-3.75 9v1.007a3 3 0 0 0 .879 2.122L16.5 21m-9.75-9h4.5m4.5 0h3.75M15 12.75v-4.5" /> </svg>
+                            <h3 class="text-xl font-semibold text-white">Layer 2 Scaling</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Discover solutions built on top of base blockchains (like Ethereum) to provide faster transactions and lower fees.</p>
+                        <a href="#" class="text-brand-orange hover:text-brand-orange-light font-medium">Discover Scaling Solutions →</a>
+                    </div>
+                 </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-dark-bg border-t border-border-dark mt-20 md:mt-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 md:py-16">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                    <div class="space-y-8 xl:col-span-1">
+                         <a href="#" class="flex items-center space-x-2 text-2xl font-bold">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 019 18v-5H5a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                             </svg>
+                             <span class="text-white">Cryptox</span>
+                         </a>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            The simplest platform to buy, sell, and trade cryptocurrency safely and quickly.
+                        </p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-brand-orange transition">
+                                <span class="sr-only">Facebook</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-brand-orange transition">
+                                 <span class="sr-only">Twitter</span>
+                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                 </svg>
+                            </a>
+                             <a href="#" class="text-gray-400 hover:text-brand-orange transition">
+                                 <span class="sr-only">LinkedIn</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                  <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.34-.025-3.068-1.868-3.068-1.87 0-2.158 1.46-2.158 2.965v5.707h-3v-11h2.881v1.316h.041c.4-.759 1.373-1.549 2.84-1.549 3.039 0 3.599 1.998 3.599 4.595v6.638z" clip-rule="evenodd"/>
+                                </svg>
+                             </a>
+                        </div>
+                    </div>
+                    <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                        <div class="md:grid md:grid-cols-2 md:gap-8">
+                            <div>
+                                <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Solutions</h3>
+                                <ul role="list" class="mt-4 space-y-4">
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Trading</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Staking</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Portfolio</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">API Access</a></li>
+                                </ul>
+                            </div>
+                            <div class="mt-12 md:mt-0">
+                                <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Support</h3>
+                                <ul role="list" class="mt-4 space-y-4">
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Pricing</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Documentation</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Guides</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">API Status</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 md:gap-8">
+                            <div>
+                                <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Company</h3>
+                                <ul role="list" class="mt-4 space-y-4">
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">About</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Blog</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Jobs</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Press</a></li>
+                                </ul>
+                            </div>
+                            <div class="mt-12 md:mt-0">
+                                 <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Legal</h3>
+                                <ul role="list" class="mt-4 space-y-4">
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Claim</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Privacy</a></li>
+                                    <li><a href="#" class="text-base text-gray-400 hover:text-brand-orange transition">Terms</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 border-t border-border-dark pt-8">
+                    <p class="text-base text-gray-500 xl:text-center">© 2024 Cryptox, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

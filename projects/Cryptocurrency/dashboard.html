@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cryptox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-orange': {
+                DEFAULT: '#F97316',
+                light: '#FB923C',
+                dark: '#EA580C',
+              },
+              'dark-bg': '#0F0F0F',
+              'card-bg': '#1E1E1E',
+              'input-bg': '#2D2D2D',
+              'border-dark': '#3A3A3A',
+              'positive-green': '#10B981', // Added for profit
+              'negative-red': '#EF4444', // Added for loss
+            },
+            fontFamily: {
+              sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+            },
+            boxShadow: {
+               'orange-glow': '0 0 15px 5px rgba(249, 115, 22, 0.3)',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css"> <!-- Assuming you have a shared style.css -->
+    <style>
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(to bottom, rgba(249, 115, 22, 0.4), transparent);
+        z-index: 10;
+      }
+      body {
+        position: relative;
+        background-color: #0F0F0F;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+       .container {
+        flex-grow: 1;
+       }
+       /* Basic table styling */
+       table th, table td {
+         padding: 0.75rem 1rem; /* py-3 px-4 */
+         border-bottom: 1px solid #3A3A3A; /* border-b border-border-dark */
+       }
+       table th {
+         text-align: left;
+         font-weight: 600; /* font-semibold */
+         color: #D1D5DB; /* text-gray-300 */
+       }
+       table tbody tr:last-child td {
+         border-bottom: none;
+       }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
+        <header class="py-4 md:py-6 relative z-20">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-orange" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 10.586V6zM8 4a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm10 6a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zm-2 4a1 1 0 100 2h2a1 1 0 100-2h-2zm-4-8a1 1 0 10-2 0v2a1 1 0 102 0V6zm-1 7a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" /> </svg>
+                    <span class="text-white">Cryptox</span>
+                </a>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="explore.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Explore</a>
+                    <a href="price.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Price</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-brand-orange transition duration-200">Portfolio</a>
+                    <a href="#activity" class="text-gray-300 hover:text-brand-orange transition duration-200">Activity</a>
+                    <a href="support.html" class="text-gray-300 hover:text-brand-orange transition duration-200">Support</a>
+                </nav>
+
+                <div class="hidden md:flex items-center space-x-4">
+                     <span class="text-gray-400 text-sm hidden lg:inline">Welcome, user@example.com</span>
+                     <button id="logout-button-desktop" class="bg-red-600 hover:bg-red-700 text-white rounded-md px-5 py-2 text-sm font-medium transition duration-200 shadow-sm hover:shadow-md">Logout</button>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 bg-card-bg p-4 rounded-md">
+                <a href="explore.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Explore</a>
+                <a href="price.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Price</a>
+                <a href="#portfolio" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Portfolio</a>
+                <a href="#activity" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Activity</a>
+                <a href="support.html" class="block text-gray-300 hover:text-brand-orange transition duration-200 py-1">Support</a>
+                <div class="pt-4 border-t border-border-dark space-y-3">
+                    <span class="block text-center text-gray-400 text-sm py-1">user@example.com</span>
+                    <button id="logout-button-mobile" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white rounded-md px-5 py-2 text-sm font-medium transition duration-200 shadow-sm hover:shadow-md">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="py-12 md:py-16">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-white">Dashboard</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- Left Column / Main Content Area -->
+                <div class="lg:col-span-2 space-y-6">
+
+                    <!-- Portfolio Summary -->
+                    <div class="bg-card-bg p-6 rounded-lg shadow-lg">
+                        <h2 class="text-xl font-semibold mb-4 text-brand-orange">Portfolio Overview</h2>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
+                            <div>
+                                <p class="text-sm text-gray-400">Total Balance</p>
+                                <p class="text-3xl font-bold text-white">$12,345.67</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-400">24h Change</p>
+                                <p class="text-xl font-semibold text-positive-green">+ $250.10 (2.07%)</p>
+                            </div>
+                        </div>
+                         <div class="mt-6 h-48 bg-input-bg rounded flex items-center justify-center text-gray-500">
+                            Chart Placeholder
+                        </div>
+                    </div>
+
+                    <!-- My Assets -->
+                    <div id="portfolio" class="bg-card-bg p-6 rounded-lg shadow-lg">
+                        <h2 class="text-xl font-semibold mb-4 text-brand-orange">My Assets</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th class="text-right">Balance</th>
+                                        <th class="text-right">Value (USD)</th>
+                                        <th class="text-right">24h Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="flex items-center space-x-3">
+                                            <img src="https://via.placeholder.com/24/F7931A/FFFFFF?text=B" alt="BTC" class="rounded-full">
+                                            <span>Bitcoin (BTC)</span>
+                                        </td>
+                                        <td class="text-right">0.15 BTC</td>
+                                        <td class="text-right">$9,450.30</td>
+                                        <td class="text-right text-positive-green">+1.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="flex items-center space-x-3">
+                                             <img src="https://via.placeholder.com/24/627EEA/FFFFFF?text=E" alt="ETH" class="rounded-full">
+                                             <span>Ethereum (ETH)</span>
+                                        </td>
+                                        <td class="text-right">2.5 ETH</td>
+                                        <td class="text-right">$2,850.15</td>
+                                        <td class="text-right text-negative-red">-0.8%</td>
+                                    </tr>
+                                     <tr>
+                                        <td class="flex items-center space-x-3">
+                                             <img src="https://via.placeholder.com/24/F0B90B/FFFFFF?text=BNB" alt="BNB" class="rounded-full">
+                                             <span>Binance Coin (BNB)</span>
+                                        </td>
+                                        <td class="text-right">5.0 BNB</td>
+                                        <td class="text-right">$1,045.22</td>
+                                        <td class="text-right text-positive-green">+3.2%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column / Sidebar -->
+                <div class="lg:col-span-1 space-y-6">
+
+                    <!-- Quick Actions -->
+                    <div class="bg-card-bg p-6 rounded-lg shadow-lg">
+                        <h2 class="text-xl font-semibold mb-4 text-brand-orange">Quick Actions</h2>
+                        <div class="space-y-3">
+                             <button class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white rounded-md px-4 py-2.5 font-medium transition duration-200">Buy Crypto</button>
+                             <button class="w-full bg-input-bg hover:bg-border-dark border border-border-dark text-gray-300 rounded-md px-4 py-2.5 font-medium transition duration-200">Sell Crypto</button>
+                             <button class="w-full bg-input-bg hover:bg-border-dark border border-border-dark text-gray-300 rounded-md px-4 py-2.5 font-medium transition duration-200">Deposit Funds</button>
+                             <button class="w-full bg-input-bg hover:bg-border-dark border border-border-dark text-gray-300 rounded-md px-4 py-2.5 font-medium transition duration-200">Withdraw Funds</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div id="activity" class="bg-card-bg p-6 rounded-lg shadow-lg">
+                         <h2 class="text-xl font-semibold mb-4 text-brand-orange">Recent Activity</h2>
+                         <ul class="space-y-4 text-sm">
+                            <li class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-white font-medium">Bought BTC</p>
+                                    <p class="text-gray-400">Oct 25, 2023, 10:30 AM</p>
+                                </div>
+                                <span class="text-positive-green">+ 0.05 BTC</span>
+                            </li>
+                             <li class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-white font-medium">Sold ETH</p>
+                                    <p class="text-gray-400">Oct 24, 2023, 02:15 PM</p>
+                                </div>
+                                <span class="text-negative-red">- 0.5 ETH</span>
+                            </li>
+                             <li class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-white font-medium">Deposited USD</p>
+                                    <p class="text-gray-400">Oct 23, 2023, 09:00 AM</p>
+                                </div>
+                                <span class="text-white">+ $1000.00</span>
+                            </li>
+                         </ul>
+                         <a href="#" class="block text-center mt-4 text-sm text-brand-orange hover:underline">View all activity</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="text-center py-8 border-t border-border-dark mt-12">
+            <p class="text-gray-500">© 2023 Cryptox. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const logoutButtonDesktop = document.getElementById('logout-button-desktop');
+            const logoutButtonMobile = document.getElementById('logout-button-mobile');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const handleLogout = () => {
+                console.log('Logging out...');
+                // Add any actual logout logic here (e.g., clearing tokens)
+                window.location.href = 'login.html';
+            };
+
+            if (logoutButtonDesktop) {
+                logoutButtonDesktop.addEventListener('click', handleLogout);
+            }
+            if (logoutButtonMobile) {
+                logoutButtonMobile.addEventListener('click', handleLogout);
+            }
+
+            // Close mobile menu if clicking on a nav link within it
+            if(mobileMenu) {
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                         if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+                 // Add listener to mobile logout button inside menu as well
+                const mobileLogoutInMenu = mobileMenu.querySelector('#logout-button-mobile');
+                if (mobileLogoutInMenu) {
+                    mobileLogoutInMenu.addEventListener('click', handleLogout);
+                }
+            }
+
+
+        });
+    </script>
+</body>
+</html>

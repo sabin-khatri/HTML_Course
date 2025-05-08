@@ -5,28 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive navbar and footer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      /* Optional: Add a slight delay if needed */
+      /* .animation-delay-200 { animation-delay: 200ms; } */
+
+      /* Smooth scroll for anchor links (optional) */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
 
-  <body class="bg-gray-50">
+  <body class="bg-gray-100">
     <!-- navbar -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <!-- logo -->
-          <div class="flex shrink-0">
-            <a href="" class="text-2xl font-bold text-blue-600">Your Brand</a>
+          <div class="flex-shrink-0">
+            <a href="#" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors duration-300">YourBrand</a>
           </div>
 
           <!-- desktop menu -->
-          <div class="hidden md:flex space-x-6">
-            <a href="" class="text-gray-700 hover:text-blue-600">Home</a>
-            <a href="" class="text-gray-700 hover:text-blue-600">About</a>
-            <a href="" class="text-gray-700 hover:text-blue-600">Services</a>
-            <a href="" class="text-gray-700 hover:text-blue-600">Contact</a>
+          <div class="hidden md:flex space-x-2">
+            <a href="#" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out transform hover:-translate-y-px">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out transform hover:-translate-y-px">About</a>
+            <a href="#services" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out transform hover:-translate-y-px">Services</a>
+            <a href="#contact" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out transform hover:-translate-y-px">Contact</a>
           </div>
-          <!-- mobile menu -->
+          <!-- mobile menu button -->
           <div class="md:hidden">
-            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <button id="menu-toggle" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 p-2 rounded-md">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -46,67 +68,122 @@
         </div>
       </div>
       <!-- mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
-          >Home</a
-        >
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
-          >About</a
-        >
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
-          >Services</a
-        >
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
-          >Contact</a
-        >
+      <div id="mobile-menu" class="md:hidden opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white shadow-md">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#" class="block py-2 px-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out">Home</a>
+            <a href="#about" class="block py-2 px-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out">About</a>
+            <a href="#services" class="block py-2 px-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out">Services</a>
+            <a href="#contact" class="block py-2 px-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out">Contact</a>
+        </div>
       </div>
     </nav>
+
     <!-- main content placeholder -->
-    <div class="pt-20 min-h-screen flex items-center justify-center">
-      <h1 class="text-3xl font-bold text-gray-800">Welcome to Your Project</h1>
+    <div class="pt-24 pb-12 min-h-screen flex flex-col items-center justify-center text-center px-4">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-800 animate-fadeInUp">
+        Welcome to <span class="text-blue-600">Your Project</span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl animate-fadeInUp" style="animation-delay: 200ms;">
+        This is a beautifully designed responsive landing page section. Explore the features and enjoy the smooth animations.
+      </p>
+      <div class="mt-10 animate-fadeInUp" style="animation-delay: 400ms;">
+        <a href="#services" class="px-8 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105">
+            Get Started
+        </a>
+      </div>
     </div>
 
-    <!-- footer -->
-    <footer class="bg-gray-900 text-white mt-20">
-      <div
-        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
-        <div class="">
+    <!-- Example Sections for navigation -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
+            <p class="text-gray-600">Some content about your brand.</p>
+        </div>
+    </section>
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
+            <p class="text-gray-600">Details about services offered.</p>
+        </div>
+    </section>
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+            <p class="text-gray-600">How to get in touch.</p>
+        </div>
+    </section>
 
-            <h2 class="text-lg font-semibold mb-4">YourBrand</h2>
-            <p class="text-sm text-gray-400">A short description about your brand or website here.</p>
+    <!-- footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <div>
+            <h2 class="text-xl font-semibold mb-4 text-blue-400">YourBrand</h2>
+            <p class="text-sm text-gray-400 leading-relaxed">A short description about your brand or website here. We aim to provide the best services and experiences.</p>
         </div>
         <div>
-            <h3 class="font-semibold mb-4">Quick Links </h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+            <h3 class="text-md font-semibold text-gray-200 mb-4 tracking-wide uppercase">Quick Links </h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-300 hover:pl-2 transition-all duration-300 ease-in-out block">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-blue-300 hover:pl-2 transition-all duration-300 ease-in-out block">About</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-blue-300 hover:pl-2 transition-all duration-300 ease-in-out block">Services</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-blue-300 hover:pl-2 transition-all duration-300 ease-in-out block">Contact</a></li>
                 </ul>
         </div>
         <div>
-            <h3 class="font-semibold mb-4">Follow Us</h3>
-            <div class="flex space-x-4">
-                <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
-                <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
-      
+            <h3 class="text-md font-semibold text-gray-200 mb-4 tracking-wide uppercase">Follow Us</h3>
+            <div class="flex space-x-5">
+                <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-blue-400 transform hover:scale-110 transition-all duration-300 ease-in-out">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-sky-400 transform hover:scale-110 transition-all duration-300 ease-in-out">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-pink-500 transform hover:scale-110 transition-all duration-300 ease-in-out">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2.085c-1.48 0-1.673.006-2.263.033-1.868.085-3.182.512-3.844 1.172-.727.726-1.088 1.976-1.172 3.844-.027.59-.033.783-.033 2.263s.006 1.673.033 2.263c.085 1.868.512 3.182 1.172 3.844.726.727 1.976 1.088 3.844 1.172.59.027.783.033 2.263.033s1.673-.006 2.263-.033c1.868-.085 3.182-.512 3.844-1.172.727-.726 1.088-1.976 1.172-3.844.027-.59.033-.783-.033-2.263s-.006-1.673-.033-2.263c-.085-1.868-.512-3.182-1.172-3.844-.726-.727-1.976-1.088-3.844-1.172-.59-.027-.783-.033-2.263-.033zm0 1.802c1.421 0 1.605.005 2.174.031 1.49.068 2.37.394 2.886.911.55.55.843 1.397.911 2.886.026.57.031.753.031 2.174s-.005 1.605-.031 2.174c-.068 1.49-.394 2.37-.911 2.886-.55.55-1.397.843-2.886.911-.57.026-.753.031-2.174.031s-1.605-.005-2.174-.031c-1.49-.068-2.37-.394-2.886-.911-.55-.55-.843-1.397-.911-2.886-.026-.57-.031-.753-.031-2.174s.005-1.605.031-2.174c.068-1.49.394-2.37.911-2.886.55-.55 1.397.843 2.886.911.57.026.753.031 2.174.031zm0 2.982a3.12 3.12 0 100 6.24 3.12 3.12 0 000-6.24zM12 15.315a3.315 3.315 0 110-6.63 3.315 3.315 0 010 6.63zm4.518-7.836a.936.936 0 100-1.872.936.936 0 000 1.872z" clip-rule="evenodd" />
+                    </svg>
+                </a>
             </div>
         </div>
       </div>
-      <div class=" border-t border-gray-700 text-center py-4 text-sm  text-gray-400">
-        &copy; 2025 YourBrand. All rights reserved.
+      <div class="mt-12 border-t border-gray-700 text-center py-6 text-sm text-gray-500">
+        © 2025 YourBrand. All rights reserved.
       </div>
     </footer>
 
 
     <script>
-        const toggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('mobile-menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
     
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
+        menuToggle.addEventListener('click', () => {
+          // Check if menu is currently closed (has opacity-0)
+          if (mobileMenu.classList.contains('opacity-0')) {
+            // Open menu
+            mobileMenu.classList.remove('opacity-0', 'max-h-0');
+            mobileMenu.classList.add('opacity-100', 'max-h-screen'); // max-h-screen or a specific value like max-h-96
+          } else {
+            // Close menu
+            mobileMenu.classList.remove('opacity-100', 'max-h-screen');
+            mobileMenu.classList.add('opacity-0', 'max-h-0');
+          }
+        });
+
+        // Optional: Close mobile menu when a link is clicked (for single-page apps)
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('opacity-100')) {
+                    mobileMenu.classList.remove('opacity-100', 'max-h-screen');
+                    mobileMenu.classList.add('opacity-0', 'max-h-0');
+                }
+            });
         });
       </script>
   </body>

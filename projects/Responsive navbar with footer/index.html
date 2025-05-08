@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive navbar and footer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- navbar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- logo -->
+          <div class="flex shrink-0">
+            <a href="" class="text-2xl font-bold text-blue-600">Your Brand</a>
+          </div>
+
+          <!-- desktop menu -->
+          <div class="hidden md:flex space-x-6">
+            <a href="" class="text-gray-700 hover:text-blue-600">Home</a>
+            <a href="" class="text-gray-700 hover:text-blue-600">About</a>
+            <a href="" class="text-gray-700 hover:text-blue-600">Services</a>
+            <a href="" class="text-gray-700 hover:text-blue-600">Contact</a>
+          </div>
+          <!-- mobile menu -->
+          <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+          >Home</a
+        >
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+          >About</a
+        >
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+          >Services</a
+        >
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <!-- main content placeholder -->
+    <div class="pt-20 min-h-screen flex items-center justify-center">
+      <h1 class="text-3xl font-bold text-gray-800">Welcome to Your Project</h1>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-gray-900 text-white mt-20">
+      <div
+        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+      >
+        <div class="">
+
+            <h2 class="text-lg font-semibold mb-4">YourBrand</h2>
+            <p class="text-sm text-gray-400">A short description about your brand or website here.</p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4">Quick Links </h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+      
+            </div>
+        </div>
+      </div>
+      <div class=" border-t border-gray-700 text-center py-4 text-sm  text-gray-400">
+        &copy; 2025 YourBrand. All rights reserved.
+      </div>
+    </footer>
+
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+    
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      </script>
+  </body>
+</html>

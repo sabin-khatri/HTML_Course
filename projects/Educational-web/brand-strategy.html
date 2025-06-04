@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Strategy Services - Brandella</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-out;
+        }
+        .service-icon {
+            width: 3rem; 
+            height: 3rem; 
+        }
+        .hero-image-service {
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (min-width: 768px) {
+             .hero-image-service {
+                 height: 350px;
+             }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-orange': '#FF5B22',
+                        'brand-orange-light': '#FFF0EB',
+                        'brand-dark': '#1E1E1E',
+                        'brand-gray': '#555555',
+                    },
+                    borderRadius: {
+                        'xl-large': '50px',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-orange-light text-brand-dark">
+
+    <header class="bg-brand-orange-light py-4 sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-orange shrink-0">
+                 brandella <span class="block text-xs font-normal text-brand-gray">IMPRESSION MATTERS</span>
+            </a>
+            <ul class="hidden md:flex space-x-6 lg:space-x-8 items-center text-brand-gray font-medium">
+                <li><a href="about.html" class="hover:text-brand-orange transition-colors">About US</a></li>
+                <li class="relative">
+                    <button type="button" id="desktop-services-button" class="text-brand-orange font-semibold flex items-center focus:outline-none transition-colors">
+                        Services <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    </button>
+                    <div id="desktop-services-dropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-20 left-0">
+                        <a href="digital-marketing.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Digital Marketing</a>
+                        <a href="web-development.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Web Development</a>
+                        <a href="brand-strategy.html" class="block px-4 py-2 text-sm text-brand-orange font-semibold bg-brand-orange-light transition-colors">Brand Strategy</a>
+                        <a href="content-creation.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Content Creation</a>
+                    </div>
+                </li>
+                <li><a href="portfolio.html" class="hover:text-brand-orange transition-colors">Portfolio</a></li>
+                <li><a href="blog.html" class="hover:text-brand-orange transition-colors">Blog</a></li>
+                <li><a href="career.html" class="hover:text-brand-orange transition-colors">Career</a></li>
+            </ul>
+            <a href="hire-us.html" class="hidden lg:inline-block px-6 py-2 border border-brand-orange text-brand-orange font-semibold rounded-lg hover:bg-brand-orange hover:text-white transition duration-300">Hire Us</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md z-10 absolute top-full left-0 w-full transform -translate-y-full">
+            <ul class="flex flex-col items-center py-4 space-y-2 text-brand-gray font-medium">
+                <li><a href="about.html" class="hover:text-brand-orange block py-2 transition-colors">About US</a></li>
+                <li class="relative w-full text-center">
+                    <button id="mobile-services-button" class="text-brand-orange font-semibold py-2 transition-colors flex items-center justify-center w-full">
+                        Services <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    </button>
+                    <div id="mobile-services-dropdown" class="bg-gray-50 py-2 w-full">
+                        <a href="digital-marketing.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Digital Marketing</a>
+                        <a href="web-development.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Web Development</a>
+                        <a href="brand-strategy.html" class="block py-2 text-sm text-brand-orange font-semibold bg-brand-orange-light/50 transition-colors">Brand Strategy</a>
+                        <a href="content-creation.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Content Creation</a>
+                    </div>
+                </li>
+                <li><a href="portfolio.html" class="hover:text-brand-orange block py-2 transition-colors">Portfolio</a></li>
+                <li><a href="blog.html" class="hover:text-brand-orange block py-2 transition-colors">Blog</a></li>
+                <li><a href="career.html" class="hover:text-brand-orange block py-2 transition-colors">Career</a></li>
+                <li><a href="hire-us.html" class="inline-block lg:hidden px-6 py-2 border border-brand-orange text-brand-orange font-semibold rounded-lg hover:bg-brand-orange hover:text-white transition duration-300 mt-4 mb-2">Hire Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-white">
+            <div class="container mx-auto px-4 lg:px-8 py-12 md:py-20">
+                <div class="text-center mb-12 md:mb-16">
+                    <nav aria-label="breadcrumb" class="text-sm text-brand-gray mb-2">
+                        <ol class="list-none p-0 inline-flex">
+                            <li class="flex items-center">
+                                <a href="index.html" class="hover:text-brand-orange">Home</a>
+                                <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-brand-gray">Services</span>
+                                <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                            </li>
+                            <li class="flex items-center text-brand-orange">
+                                Brand Strategy
+                            </li>
+                        </ol>
+                    </nav>
+                    <h1 class="text-4xl sm:text-5xl font-bold text-brand-dark leading-tight">
+                        Strategic Brand Solutions
+                    </h1>
+                    <p class="text-brand-gray mt-4 text-base md:text-lg max-w-3xl mx-auto">
+                        At Brandella, we develop powerful brand strategies that resonate with your target audience, differentiate you from competitors, and build lasting brand equity.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 lg:px-8 my-16 md:my-24">
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-brand-orange font-semibold mb-2">Our Services</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Comprehensive Brand Strategy Services</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="bg-brand-orange-light p-4 rounded-full mb-4 inline-block">
+                        <svg class="service-icon text-brand-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2zM12 3V1m0 20v-2m4-11h2M3 12h2m7-7l1.414-1.414M6.343 6.343L5 5m12.728 1.343L19 5m-1.272 12.728l1.414 1.414M5 19l1.343-1.343" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2">Brand Identity & Design</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        We craft compelling visual identities, including logos, color palettes, and typography, that truly represent your brand's essence.
+                    </p>
+                    <a href="#" class="mt-4 text-brand-orange font-medium text-sm hover:underline">Learn More →</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="bg-brand-orange-light p-4 rounded-full mb-4 inline-block">
+                        <svg class="service-icon text-brand-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2">Market Research & Analysis</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Gain deep insights into your target audience, industry trends, and competitive landscape to inform effective brand strategies.
+                    </p>
+                     <a href="#" class="mt-4 text-brand-orange font-medium text-sm hover:underline">Learn More →</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="bg-brand-orange-light p-4 rounded-full mb-4 inline-block">
+                        <svg class="service-icon text-brand-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V7.618a1 1 0 01.553-.894L9 4m0 16l6.447-3.224a1 1 0 00.553-.894V7.618a1 1 0 00-.553-.894L9 4m0 16V4m6 12l5.447-2.724A1 1 0 0021 16.382V7.618a1 1 0 00-.553-.894L15 4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2">Brand Positioning & Messaging</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Define your unique value proposition and craft compelling brand messages that connect with your audience and drive differentiation.
+                    </p>
+                     <a href="#" class="mt-4 text-brand-orange font-medium text-sm hover:underline">Learn More →</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="bg-brand-orange-light p-4 rounded-full mb-4 inline-block">
+                        <svg class="service-icon text-brand-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2">Brand Guidelines & Governance</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Develop comprehensive brand guidelines to ensure consistency across all touchpoints and maintain brand integrity.
+                    </p>
+                     <a href="#" class="mt-4 text-brand-orange font-medium text-sm hover:underline">Learn More →</a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="bg-brand-orange-light p-4 rounded-full mb-4 inline-block">
+                        <svg class="service-icon text-brand-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m-15.357-2a8.001 8.001 0 0015.357 2M9 15h9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2">Rebranding & Brand Refresh</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Revitalize your brand for evolving markets or new business directions with our strategic rebranding and refresh services.
+                    </p>
+                     <a href="#" class="mt-4 text-brand-orange font-medium text-sm hover:underline">Learn More →</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="bg-brand-orange-light p-4 rounded-full mb-4 inline-block">
+                        <svg class="service-icon text-brand-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2">Brand Storytelling</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Craft authentic and engaging brand narratives that captivate your audience and build emotional connections.
+                    </p>
+                     <a href="#" class="mt-4 text-brand-orange font-medium text-sm hover:underline">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-16 md:py-20">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-brand-orange font-semibold mb-2">Our Edge</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Why Choose Brandella for Brand Strategy?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div class="bg-brand-orange-light p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 mt-1 bg-white text-brand-orange rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.014A11.953 11.953 0 0112 2.5c4.953 0 9.286 2.933 11.014 7.014C20.5 11.933 21 14.933 21 17c0 1.539-.205 2.99-.586 4.343a8.007 8.007 0 01-2.757-2.686z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.343 7.343A7.963 7.963 0 014 17c0 4.418 3.582 8 8 8s8-3.582 8-8-3.582-8-8-8c-1.08 0-2.102.216-3.04.607"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-dark mb-2">Deep Market Insights</h4>
+                                <p class="text-brand-gray text-sm leading-relaxed">Our strategies are built on thorough research and a profound understanding of market dynamics.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-brand-orange-light p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                             <div class="flex-shrink-0 w-10 h-10 mt-1 bg-white text-brand-orange rounded-full flex items-center justify-center">
+                               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m11-13l-2.286 6.857L13 12l5.714 2.143L21 21l-2.286-6.857L13 12l5.714-2.143L21 3z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-dark mb-2">Creative Excellence</h4>
+                                <p class="text-brand-gray text-sm leading-relaxed">We combine strategic thinking with creative flair to develop brands that stand out and captivate.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-brand-orange-light p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                             <div class="flex-shrink-0 w-10 h-10 mt-1 bg-white text-brand-orange rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-dark mb-2">Holistic Approach</h4>
+                                <p class="text-brand-gray text-sm leading-relaxed">We consider all aspects of your brand, ensuring a cohesive and integrated strategy across all channels.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-brand-orange-light p-6 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 mt-1 bg-white text-brand-orange rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-dark mb-2">Measurable Impact</h4>
+                                <p class="text-brand-gray text-sm leading-relaxed">Our brand strategies are designed to deliver tangible results and contribute to your business growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="container mx-auto px-4 lg:px-8 my-16 md:my-24">
+            <div class="bg-brand-orange text-white p-8 md:p-12 rounded-xl-large text-center shadow-xl">
+                <img src="https://images.unsplash.com/photo-1522125670076-cb3954674D14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Brand Strategy Workshop" class="w-full h-64 md:h-80 object-cover rounded-lg mb-8 shadow-md hero-image-service">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Define Your Brand's Future?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                    Let's build a brand that not only looks good but also performs exceptionally. Connect with Brandella's strategists to sculpt a powerful and enduring brand presence.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="bg-white text-brand-orange px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition duration-300 w-full sm:w-auto">
+                        Start Your Brand Journey
+                    </a>
+                    <a href="portfolio.html" class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-orange transition duration-300 w-full sm:w-auto">
+                        Explore Case Studies
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-dark text-gray-400 mt-0 py-12 md:py-16">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:mb-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                     <a href="index.html" class="text-white text-xl font-bold mb-4 inline-block">brandella</a>
+                    <p class="mb-4 text-sm leading-relaxed">Innovative digital solutions to unlock your business growth potential.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Youtube"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="digital-marketing.html" class="text-sm hover:text-white transition-colors">Digital Marketing</a></li>
+                        <li><a href="web-development.html" class="text-sm hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="brand-strategy.html" class="text-white font-semibold transition-colors">Brand Strategy</a></li>
+                        <li><a href="content-creation.html" class="text-sm hover:text-white transition-colors">Content Creation</a></li>
+                        <li><a href="#" class="text-sm hover:text-white transition-colors">SEO Services</a></li>
+                        <li><a href="#" class="text-sm hover:text-white transition-colors">Social Media</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-sm hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="ourteam.html" class="text-sm hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="career.html" class="text-sm hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="portfolio.html" class="text-sm hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-sm hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-sm hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <address class="not-italic text-sm space-y-2">
+                        <p>123 Business Avenue</p>
+                        <p>Digital District, BD 1212</p>
+                        <p>Email: <a href="mailto:info@brandella.com" class="hover:text-white transition-colors">info@brandella.com</a></p>
+                        <p>Phone: <a href="tel:+8801234567890" class="hover:text-white transition-colors">+880 1234 567890</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2024 Brandella. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Brandella - Start Your Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-out;
+        }
+        .form-input, .form-textarea, .form-select {
+            @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-orange focus:border-brand-orange outline-none transition-colors duration-300 text-sm;
+        }
+        .form-checkbox {
+            @apply h-5 w-5 text-brand-orange border-gray-300 rounded focus:ring-brand-orange;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-brand-dark mb-1;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-orange': '#FF5B22',
+                        'brand-orange-light': '#FFF0EB',
+                        'brand-dark': '#1E1E1E',
+                        'brand-gray': '#555555',
+                    },
+                    borderRadius: {
+                        'xl-large': '50px',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-orange-light text-brand-dark">
+
+    <header class="bg-brand-orange-light py-4 sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-orange shrink-0">
+                 brandella <span class="block text-xs font-normal text-brand-gray">IMPRESSION MATTERS</span>
+            </a>
+            <ul class="hidden md:flex space-x-6 lg:space-x-8 items-center text-brand-gray font-medium">
+                <li><a href="about.html" class="hover:text-brand-orange transition-colors">About US</a></li>
+                <li class="relative">
+                    <button type="button" id="desktop-services-button" class="hover:text-brand-orange flex items-center focus:outline-none transition-colors">
+                        Services <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    </button>
+                    <div id="desktop-services-dropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-20 left-0">
+                        <a href="digital-marketing.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Digital Marketing</a>
+                        <a href="web-development.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Web Development</a>
+                        <a href="brand-strategy.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Brand Strategy</a>
+                        <a href="content-creation.html" class="block px-4 py-2 text-sm text-brand-gray hover:bg-brand-orange-light transition-colors">Content Creation</a>
+                    </div>
+                </li>
+                <li><a href="portfolio.html" class="hover:text-brand-orange transition-colors">Portfolio</a></li>
+                <li><a href="blog.html" class="hover:text-brand-orange transition-colors">Blog</a></li>
+                <li><a href="career.html" class="hover:text-brand-orange transition-colors">Career</a></li>
+            </ul>
+            <a href="hire-us.html" class="hidden lg:inline-block px-6 py-2 bg-brand-orange text-white font-semibold rounded-lg hover:bg-opacity-90 transition duration-300">Hire Us</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md z-10 absolute top-full left-0 w-full transform -translate-y-full">
+            <ul class="flex flex-col items-center py-4 space-y-2 text-brand-gray font-medium">
+                <li><a href="about.html" class="hover:text-brand-orange block py-2 transition-colors">About US</a></li>
+                <li class="relative w-full text-center">
+                    <button id="mobile-services-button" class="hover:text-brand-orange py-2 transition-colors flex items-center justify-center w-full">
+                        Services <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    </button>
+                    <div id="mobile-services-dropdown" class="hidden bg-gray-50 py-2 w-full">
+                        <a href="digital-marketing.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Digital Marketing</a>
+                        <a href="web-development.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Web Development</a>
+                        <a href="brand-strategy.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Brand Strategy</a>
+                        <a href="content-creation.html" class="block py-2 text-sm hover:text-brand-orange transition-colors">Content Creation</a>
+                    </div>
+                </li>
+                <li><a href="portfolio.html" class="hover:text-brand-orange block py-2 transition-colors">Portfolio</a></li>
+                <li><a href="blog.html" class="hover:text-brand-orange block py-2 transition-colors">Blog</a></li>
+                <li><a href="career.html" class="hover:text-brand-orange block py-2 transition-colors">Career</a></li>
+                <li><a href="hire-us.html" class="inline-block lg:hidden px-6 py-2 bg-brand-orange text-white font-semibold rounded-lg hover:bg-opacity-90 transition duration-300 mt-4 mb-2">Hire Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-white">
+            <div class="container mx-auto px-4 lg:px-8 py-12 md:py-20">
+                <div class="text-center mb-12 md:mb-16">
+                    <nav aria-label="breadcrumb" class="text-sm text-brand-gray mb-2">
+                        <ol class="list-none p-0 inline-flex">
+                            <li class="flex items-center">
+                                <a href="index.html" class="hover:text-brand-orange">Home</a>
+                                <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                            </li>
+                            <li class="flex items-center text-brand-orange">
+                                Hire Us
+                            </li>
+                        </ol>
+                    </nav>
+                    <h1 class="text-4xl sm:text-5xl font-bold text-brand-dark leading-tight">
+                        Let's Build Something Amazing Together
+                    </h1>
+                    <p class="text-brand-gray mt-4 text-base md:text-lg max-w-3xl mx-auto">
+                        Ready to elevate your brand and achieve your digital goals? Tell us about your project, and our team of experts will get back to you with a tailored solution.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 lg:px-8 my-16 md:my-24">
+            <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 lg:p-10 rounded-lg shadow-xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 text-center">Project Inquiry Form</h2>
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="full-name" class="form-label">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" name="full-name" id="full-name" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email Address <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" id="email" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="company-name" class="form-label">Company Name</label>
+                            <input type="text" name="company-name" id="company-name" class="form-input">
+                        </div>
+                        <div>
+                            <label for="phone-number" class="form-label">Phone Number</label>
+                            <input type="tel" name="phone-number" id="phone-number" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="form-label">Services Interested In <span class="text-red-500">*</span></label>
+                        <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                            <div class="flex items-center">
+                                <input id="service-dm" name="services[]" type="checkbox" value="Digital Marketing" class="form-checkbox">
+                                <label for="service-dm" class="ml-2 text-sm text-brand-gray">Digital Marketing</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="service-wd" name="services[]" type="checkbox" value="Web Development" class="form-checkbox">
+                                <label for="service-wd" class="ml-2 text-sm text-brand-gray">Web Development</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="service-bs" name="services[]" type="checkbox" value="Brand Strategy" class="form-checkbox">
+                                <label for="service-bs" class="ml-2 text-sm text-brand-gray">Brand Strategy</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="service-cc" name="services[]" type="checkbox" value="Content Creation" class="form-checkbox">
+                                <label for="service-cc" class="ml-2 text-sm text-brand-gray">Content Creation</label>
+                            </div>
+                             <div class="flex items-center">
+                                <input id="service-other" name="services[]" type="checkbox" value="Other" class="form-checkbox">
+                                <label for="service-other" class="ml-2 text-sm text-brand-gray">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="project-description" class="form-label">Tell us about your project <span class="text-red-500">*</span></label>
+                        <textarea name="project-description" id="project-description" rows="5" class="form-textarea" required></textarea>
+                        <p class="text-xs text-brand-gray mt-1">Please provide as much detail as possible about your requirements, goals, and target audience.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="budget" class="form-label">Estimated Budget</label>
+                            <select id="budget" name="budget" class="form-select">
+                                <option value="">Select your budget range</option>
+                                <option value="5k">Less than $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k+">$50,000+</option>
+                                <option value="discuss">To be discussed</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="referral" class="form-label">How did you hear about us?</label>
+                            <input type="text" name="referral" id="referral" class="form-input" placeholder="e.g., Google, Referral, Social Media">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="form-label">Preferred Contact Method</label>
+                        <div class="mt-2 flex flex-col sm:flex-row sm:gap-6">
+                             <div class="flex items-center mb-2 sm:mb-0">
+                                <input id="contact-email" name="contact_method" type="radio" value="Email" class="form-checkbox" checked>
+                                <label for="contact-email" class="ml-2 text-sm text-brand-gray">Email</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="contact-phone" name="contact_method" type="radio" value="Phone" class="form-checkbox">
+                                <label for="contact-phone" class="ml-2 text-sm text-brand-gray">Phone Call</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full bg-brand-orange text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition duration-300 text-lg">
+                            Send Project Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 lg:px-8 my-16 md:my-24">
+            <div class="text-center">
+                 <p class="text-brand-orange font-semibold mb-2">Other Ways to Connect</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-6">We're Here to Help</h2>
+                <p class="text-brand-gray mb-4 max-w-xl mx-auto">
+                    If you prefer, you can also reach out to us directly via email or phone. Our team is ready to discuss your needs and how Brandella can help you succeed.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="mailto:info@brandella.com" class="inline-flex items-center text-brand-dark hover:text-brand-orange transition-colors font-medium">
+                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        info@brandella.com
+                    </a>
+                    <a href="tel:+8801234567890" class="inline-flex items-center text-brand-dark hover:text-brand-orange transition-colors font-medium">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.308 1.154a11.034 11.034 0 005.37 5.37l1.154-2.308a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        +880 1234 567890
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-dark text-gray-400 mt-0 py-12 md:py-16">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:mb-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                     <a href="index.html" class="text-white text-xl font-bold mb-4 inline-block">brandella</a>
+                    <p class="mb-4 text-sm leading-relaxed">Innovative digital solutions to unlock your business growth potential.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Youtube"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="digital-marketing.html" class="text-sm hover:text-white transition-colors">Digital Marketing</a></li>
+                        <li><a href="web-development.html" class="text-sm hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="brand-strategy.html" class="text-sm hover:text-white transition-colors">Brand Strategy</a></li>
+                        <li><a href="content-creation.html" class="text-sm hover:text-white transition-colors">Content Creation</a></li>
+                        <li><a href="#" class="text-sm hover:text-white transition-colors">SEO Services</a></li>
+                        <li><a href="#" class="text-sm hover:text-white transition-colors">Social Media</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-sm hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="ourteam.html" class="text-sm hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="career.html" class="text-sm hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="portfolio.html" class="text-sm hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-sm hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-sm hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <address class="not-italic text-sm space-y-2">
+                        <p>123 Business Avenue</p>
+                        <p>Digital District, BD 1212</p>
+                        <p>Email: <a href="mailto:info@brandella.com" class="hover:text-white transition-colors">info@brandella.com</a></p>
+                        <p>Phone: <a href="tel:+8801234567890" class="hover:text-white transition-colors">+880 1234 567890</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2024 Brandella. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

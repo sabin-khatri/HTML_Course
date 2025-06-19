@@ -24,27 +24,46 @@
   <body class="bg-slate-50 text-slate-700">
 
     <!-- Navbar -->
+      <!-- Navbar -->
     <nav class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-20 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
           <div class="flex-shrink-0">
-            <a href="index.html" class="text-3xl font-bold text-green-800">Nepal<span class="text-green-600">Treks</span></a>
+            <a href="#" class="text-3xl font-bold text-green-800">Nepal<span class="text-green-600">Treks</span></a>
           </div>
           <div class="hidden md:block">
             <ul class="ml-10 flex items-baseline space-x-8">
-              <li><a href="index.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Home</a></li>
-              <li><a href="about.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">About</a></li>
-              <li><a href="packages.html" class="text-green-600 font-bold">Packages</a></li> <!-- Active link style -->
-              <li><a href="#" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Gallery</a></li>
-              <li><a href="#" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-all duration-300 shadow hover:shadow-lg">Contact Us</a></li>
+              <li><a href="#" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Home</a></li>
+               <li><a href="about.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">About</a></li>
+              <li><a href="destination.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Destinations</a></li>
+              <li><a href="packages.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Packages</a></li>
+              <li><a href="gallery.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Gallery</a></li>
+              <li><a href="contact.html" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-all duration-300 shadow hover:shadow-lg">Contact Us</a></li>
             </ul>
           </div>
           <div class="md:hidden">
-            <button id="menuBtn" class="text-slate-800 focus:outline-none"><svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg><svg id="closeIcon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+            <button id="menuBtn" class="text-slate-800 focus:outline-none">
+              <svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+              <svg id="closeIcon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
-      <div id="mobileMenu" class="md:hidden bg-white/95 backdrop-blur-md transition-all duration-500 ease-in-out max-h-0 overflow-hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Home</a><a href="about.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">About</a><a href="packages.html" class="block bg-green-100 text-green-700 px-3 py-2 rounded-md font-medium">Packages</a><a href="#" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Gallery</a><a href="#" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Contact</a></div></div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden bg-white/95 backdrop-blur-md transition-all duration-500 ease-in-out max-h-0 overflow-hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Home</a>
+          <a href="about.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">About</a>
+          <a href="destination.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Destinations</a>
+          <a href="packages.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Packages</a>
+          <a href="gallery.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Gallery</a>
+          <a href="contact.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Contact</a>
+        </div>
+      </div>
     </nav>
 <!-- SOLUTION 1: Replace your header with this block -->
 <header class="bg-cover bg-center h-[50vh] pt-20" style="background-image: url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');">

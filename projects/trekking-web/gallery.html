@@ -80,51 +80,53 @@
       </div>
     </header>
 
-    <!-- Photo Gallery Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-green-800 animate-on-scroll">Photo Gallery</h2>
-          <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600 animate-on-scroll" style="transition-delay: 100ms;">Moments captured from the trails, from grand vistas to quiet cultural encounters.</p>
-        </div>
-        
-        <!-- Masonry Grid Container -->
-        <div class="masonry-grid mt-12 columns-2 md:columns-3 lg:columns-4 animate-on-scroll" style="transition-delay: 200ms;">
-          <!-- Image 1 -->
-          <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/everest.jpg" alt="Everest Base Camp trail with a trekker">
-          </a>
-          <!-- Image 2 -->
-          <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/upper-mustang-trek-nepal.webp" alt="Upper Mustang red cliffs and monastery">
-          </a>
-           <!-- Image 3 -->
-           <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/Poon-Hill-trek-itinerary-Nepal.jpg.webp" alt="Sunrise view from Poon Hill">
-          </a>
-          <!-- Image 4 -->
-          <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/Gokyo-Lake.webp" alt="Himalayan village and suspension bridge">
-          </a>
-          <!-- Image 5 -->
-          <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/manaslu.jpeg" alt="View of Manaslu">
-          </a>
-          <!-- Image 6 -->
-           <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/Gokyo-Lake.webp" alt="Gokyo Lake in the Everest region">
-          </a>
-          <!-- Image 7 -->
-          <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/everest.jpg" alt="Close up view of Machhapuchhre from Mardi Himal trek">
-          </a>
-          <!-- Image 8 -->
-          <a href="" target="_blank" class="masonry-item block overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
-            <img src="./images/langtang.webp" alt="Trekkers in Langtang Valley">
-          </a>
-        </div>
-      </div>
-    </section>
+ 
+  <!-- PHOTO GALLERY SECTION - REWRITTEN FOR FIXED IMAGE SIZES -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-green-800 animate-on-scroll">Photo Gallery</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600 animate-on-scroll" style="transition-delay: 100ms;">Moments captured from the trails, from grand vistas to quiet cultural encounters.</p>
+    </div>
+    
+    <!-- Standard Grid Container for uniform items -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-on-scroll" style="transition-delay: 200ms;">
+      
+      <!-- Image 1 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/everest.jpg" alt="Everest Base Camp trail with a trekker" class="w-full h-full object-cover w-800">
+      </a>
+      <!-- Image 2 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/upper-mustang-trek-nepal.webp" alt="Upper Mustang red cliffs and monastery" class="w-full h-full object-cover w-800">
+      </a>
+      <!-- Image 3 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/Poon-Hill-trek-itinerary-Nepal.jpg.webp" alt="Sunrise view from Poon Hill" class="w-full h-full object-cover w-800">
+      </a>
+      <!-- Image 4 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/mardi-himal-trek-for-nepali.webp" alt="Himalayan village and suspension bridge" class="w-full h-full object-cover w-800">
+      </a>
+      <!-- Image 5 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/manaslu.jpeg" alt="View of Manaslu" class="w-full h-full object-cover w-800">
+      </a>
+      <!-- Image 6 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/langtang.webp" alt="Gokyo Lake in the Everest region" class="w-full h-full object-cover">
+      </a>
+      <!-- Image 7 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/cropped-mardi-himal-trek-1.jpg" alt="Close up view of Machhapuchhre from Mardi Himal trek" class="w-full h-full object-cover">
+      </a>
+      <!-- Image 8 -->
+      <a href="" target="_blank" class="block aspect-square overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+        <img src="./images/kanch-bc-1.jpg" alt="Trekkers in Langtang Valley" class="w-full h-full object-cover">
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- Video Gallery Section -->
     <section class="py-20 bg-slate-50">

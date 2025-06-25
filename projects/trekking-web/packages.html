@@ -5,209 +5,665 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Trekking Packages | Nepal Treks</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
-      .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-      .is-visible { opacity: 1; transform: translateY(0); }
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+      body {
+        font-family: "Inter", sans-serif;
       }
-      .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-      .filter-btn.active { background-color: #166534; color: white; }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .filter-btn.active {
+        background-color: #166534;
+        color: white;
+      }
     </style>
   </head>
   <body class="bg-slate-50 text-slate-700">
-
     <!-- Navbar -->
-      <!-- Navbar -->
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-20 transition-all duration-300">
+    <!-- Navbar -->
+    <nav
+      class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-20 transition-all duration-300"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
           <div class="flex-shrink-0">
-            <a href="#" class="text-3xl font-bold text-green-800">Nepal<span class="text-green-600">Treks</span></a>
+            <a href="#" class="text-3xl font-bold text-green-800"
+              >Nepal<span class="text-green-600">Treks</span></a
+            >
           </div>
           <div class="hidden md:block">
             <ul class="ml-10 flex items-baseline space-x-8">
-              <li><a href="index.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Home</a></li>
-               <li><a href="about.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">About</a></li>
-             
-              <li><a href="packages.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Packages</a></li>
-              <li><a href="gallery.html" class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300">Gallery</a></li>
-              <li><a href="contact.html" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-all duration-300 shadow hover:shadow-lg">Contact Us</a></li>
+              <li>
+                <a
+                  href="index.html"
+                  class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300"
+                  >About</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="packages.html"
+                  class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300"
+                  >Packages</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gallery.html"
+                  class="text-slate-800 hover:text-green-600 font-medium transition-colors duration-300"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-all duration-300 shadow hover:shadow-lg"
+                  >Contact Us</a
+                >
+              </li>
             </ul>
           </div>
           <div class="md:hidden">
             <button id="menuBtn" class="text-slate-800 focus:outline-none">
-              <svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              <svg
+                id="menuIcon"
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
-              <svg id="closeIcon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                id="closeIcon"
+                class="w-7 h-7 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
         </div>
       </div>
       <!-- Mobile Menu -->
-      <div id="mobileMenu" class="md:hidden bg-white/95 backdrop-blur-md transition-all duration-500 ease-in-out max-h-0 overflow-hidden">
+      <div
+        id="mobileMenu"
+        class="md:hidden bg-white/95 backdrop-blur-md transition-all duration-500 ease-in-out max-h-0 overflow-hidden"
+      >
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="index.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Home</a>
-          <a href="about.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">About</a>
-         
-          <a href="packages.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Packages</a>
-          <a href="gallery.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Gallery</a>
-          <a href="contact.html" class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium">Contact</a>
+          <a
+            href="index.html"
+            class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium"
+            >About</a
+          >
+
+          <a
+            href="packages.html"
+            class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium"
+            >Packages</a
+          >
+          <a
+            href="gallery.html"
+            class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium"
+            >Gallery</a
+          >
+          <a
+            href="contact.html"
+            class="block text-slate-800 hover:text-white hover:bg-green-600 px-3 py-2 rounded-md font-medium"
+            >Contact</a
+          >
         </div>
       </div>
     </nav>
-<!-- SOLUTION 1: Replace your header with this block -->
-<header class="bg-cover bg-center h-[50vh] pt-20" style="background-image: url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');">
-  <div class="bg-black/40 h-full flex items-center justify-center">
-    <div class="text-center text-white px-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold fade-in-up">Our Trekking Packages</h1>
-      <p class="mt-2 text-lg md:text-xl fade-in-up" style="animation-delay: 0.2s;">Find Your Perfect Himalayan Journey</p>
-    </div>
-  </div>
-</header>
+    <!-- SOLUTION 1: Replace your header with this block -->
+    <header
+      class="bg-cover bg-center h-[50vh] pt-20"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
+      "
+    >
+      <div class="bg-black/40 h-full flex items-center justify-center">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-6xl font-extrabold fade-in-up">
+            Our Trekking Packages
+          </h1>
+          <p
+            class="mt-2 text-lg md:text-xl fade-in-up"
+            style="animation-delay: 0.2s"
+          >
+            Find Your Perfect Himalayan Journey
+          </p>
+        </div>
+      </div>
+    </header>
 
     <!-- Trekking Packages Section -->
     <section class="py-20 bg-slate-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-green-800 animate-on-scroll">All Available Treks</h2>
-          <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600 animate-on-scroll" style="transition-delay: 100ms;">From iconic classics to hidden gems, find the adventure that calls to you.</p>
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-green-800 animate-on-scroll"
+          >
+            All Available Treks
+          </h2>
+          <p
+            class="mt-4 max-w-2xl mx-auto text-lg text-slate-600 animate-on-scroll"
+            style="transition-delay: 100ms"
+          >
+            From iconic classics to hidden gems, find the adventure that calls
+            to you.
+          </p>
         </div>
 
         <!-- Filter Buttons -->
-        <div id="filter-container" class="mt-10 flex justify-center flex-wrap gap-2 md:gap-4 animate-on-scroll" style="transition-delay: 200ms;">
-          <button data-filter="all" class="filter-btn active font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">All Treks</button>
-          <button data-filter="moderate" class="filter-btn font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">Moderate</button>
-          <button data-filter="challenging" class="filter-btn font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">Challenging</button>
-          <button data-filter="remote" class="filter-btn font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">Remote</button>
+        <div
+          id="filter-container"
+          class="mt-10 flex justify-center flex-wrap gap-2 md:gap-4 animate-on-scroll"
+          style="transition-delay: 200ms"
+        >
+          <button
+            data-filter="all"
+            class="filter-btn active font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300"
+          >
+            All Treks
+          </button>
+          <button
+            data-filter="moderate"
+            class="filter-btn font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300"
+          >
+            Moderate
+          </button>
+          <button
+            data-filter="challenging"
+            class="filter-btn font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300"
+          >
+            Challenging
+          </button>
+          <button
+            data-filter="remote"
+            class="filter-btn font-semibold px-4 py-2 rounded-full border-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300"
+          >
+            Remote
+          </button>
         </div>
 
         <!-- Trek Grid -->
-        <div id="trek-grid" class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          id="trek-grid"
+          class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           <!-- Card 1: EBC -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="challenging" style="transition-delay: 200ms;">
-            <img src="./images/everest.jpg" class="w-full h-56 object-cover" alt="Everest Base Camp Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="challenging"
+            style="transition-delay: 200ms"
+          >
+            <img
+              src="./images/everest.jpg"
+              class="w-full h-56 object-cover"
+              alt="Everest Base Camp Trek"
+            />
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-800">Everest Base Camp</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>14 Days</span>
-                <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Challenging</span>
+              <h3 class="text-2xl font-bold text-slate-800">
+                Everest Base Camp
+              </h3>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"></path>
+                      </svg>14 Days</span>
+                <span
+                  class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm"
+                  >Challenging</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">Follow in the footsteps of legends to the base of the world's highest peak.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                Follow in the footsteps of legends to the base of the world's
+                highest peak.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 2: Annapurna Circuit -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="moderate" style="transition-delay: 300ms;">
-            <img src="./images/annapurna.jpg" class="w-full h-56 object-cover" alt="Annapurna Circuit Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="moderate"
+            style="transition-delay: 300ms"
+          >
+            <img
+              src="./images/annapurna.jpg"
+              class="w-full h-56 object-cover"
+              alt="Annapurna Circuit Trek"
+            />
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-800">Annapurna Circuit</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>12-16 Days</span>
-                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Moderate</span>
+              <h3 class="text-2xl font-bold text-slate-800">
+                Annapurna Circuit
+              </h3>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"/>
+                      </svg>12-16 Days</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm"
+                  >Moderate</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">A classic trek offering diverse landscapes, from lush forests to arid high deserts.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                A classic trek offering diverse landscapes, from lush forests to
+                arid high deserts.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 3: Langtang Valley -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="moderate" style="transition-delay: 400ms;">
-            <img src="./images/langtang.webp" class="w-full h-56 object-cover" alt="Langtang Valley Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="moderate"
+            style="transition-delay: 400ms"
+          >
+            <img
+              src="./images/langtang.webp"
+              class="w-full h-56 object-cover"
+              alt="Langtang Valley Trek"
+            />
             <div class="p-6">
               <h3 class="text-2xl font-bold text-slate-800">Langtang Valley</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>7-10 Days</span>
-                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Moderate</span>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg>7-10 Days</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm"
+                  >Moderate</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">A peaceful, less-crowded trail with stunning views and rich Tamang culture.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                A peaceful, less-crowded trail with stunning views and rich
+                Tamang culture.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 4: Gokyo Lakes -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="challenging" style="transition-delay: 200ms;">
-            <img src="./images/Gokyo-Lake.webp" class="w-full h-56 object-cover" alt="Gokyo Lakes Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="challenging"
+            style="transition-delay: 200ms"
+          >
+            <img
+              src="./images/Gokyo-Lake.webp"
+              class="w-full h-56 object-cover"
+              alt="Gokyo Lakes Trek"
+            />
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-800">Gokyo Lakes Trek</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>12-14 Days</span>
-                <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Challenging</span>
+              <h3 class="text-2xl font-bold text-slate-800">
+                Gokyo Lakes Trek
+              </h3>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg >12-14 Days</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm"
+                  >Challenging</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">Discover emerald-green glacial lakes and panoramic views of four 8,000m peaks.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                Discover emerald-green glacial lakes and panoramic views of four
+                8,000m peaks.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 5: Manaslu Circuit -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="challenging remote" style="transition-delay: 300ms;">
-            <img src="./images/manaslu.jpeg" class="w-full h-56 object-cover" alt="Manaslu Circuit Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="challenging remote"
+            style="transition-delay: 300ms"
+          >
+            <img
+              src="./images/manaslu.jpeg"
+              class="w-full h-56 object-cover"
+              alt="Manaslu Circuit Trek"
+            />
             <div class="p-6">
               <h3 class="text-2xl font-bold text-slate-800">Manaslu Circuit</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>15-18 Days</span>
-                <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Challenging</span>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg>15-18 Days</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm"
+                  >Challenging</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">A remote and culturally rich trek around the world's eighth highest mountain.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                A remote and culturally rich trek around the world's eighth
+                highest mountain.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 6: Poon Hill -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="moderate" style="transition-delay: 400ms;">
-            <img src="./images/Poon-Hill-trek-itinerary-Nepal.jpg.webp" class="w-full h-56 object-cover" alt="Ghorepani Poon Hill Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="moderate"
+            style="transition-delay: 400ms"
+          >
+            <img
+              src="./images/Poon-Hill-trek-itinerary-Nepal.jpg.webp"
+              class="w-full h-56 object-cover"
+              alt="Ghorepani Poon Hill Trek"
+            />
             <div class="p-6">
               <h3 class="text-2xl font-bold text-slate-800">Poon Hill Trek</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>4-5 Days</span>
-                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Moderate</span>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg>4-5 Days</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm"
+                  >Moderate</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">A short trek perfect for breathtaking sunrise views over the Annapurna range.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                A short trek perfect for breathtaking sunrise views over the
+                Annapurna range.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 7: Upper Mustang -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="challenging remote" style="transition-delay: 200ms;">
-            <img src="./images/upper-mustang-trek-nepal.webp" class="w-full h-56 object-cover" alt="Upper Mustang Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="challenging remote"
+            style="transition-delay: 200ms"
+          >
+            <img
+              src="./images/upper-mustang-trek-nepal.webp"
+              class="w-full h-56 object-cover"
+              alt="Upper Mustang Trek"
+            />
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-800">Upper Mustang Trek</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>12-17 Days</span>
-                <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Challenging</span>
+              <h3 class="text-2xl font-bold text-slate-800">
+                Upper Mustang Trek
+              </h3>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg >12-17 Days</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm"
+                  >Challenging</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">Journey into the 'Forbidden Kingdom' of Lo, a vast, arid desert with ancient Tibetan culture.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                Journey into the 'Forbidden Kingdom' of Lo, a vast, arid desert
+                with ancient Tibetan culture.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 8: Mardi Himal -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="moderate" style="transition-delay: 300ms;">
-            <img src="./images/mardi-himal-trek-for-nepali.webp" class="w-full h-56 object-cover" alt="Mardi Himal Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="moderate"
+            style="transition-delay: 300ms"
+          >
+            <img
+              src="./images/mardi-himal-trek-for-nepali.webp"
+              class="w-full h-56 object-cover"
+              alt="Mardi Himal Trek"
+            />
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-800">Mardi Himal Trek</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>5-9 Days</span>
-                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Moderate</span>
+              <h3 class="text-2xl font-bold text-slate-800">
+                Mardi Himal Trek
+              </h3>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg>5-9 Days</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm"
+                  >Moderate</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">A short, spectacular ridge trek with incredible close-up views of Machhapuchhre.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                A short, spectacular ridge trek with incredible close-up views
+                of Machhapuchhre.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
           <!-- Card 9: Kanchenjunga -->
-          <div class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll" data-category="challenging remote" style="transition-delay: 400ms;">
-            <img src="./images/kanch-bc-1.jpg" class="w-full h-56 object-cover" alt="Kanchenjunga Circuit Trek" />
+          <div
+            class="trek-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl animate-on-scroll"
+            data-category="challenging remote"
+            style="transition-delay: 400ms"
+          >
+            <img
+              src="./images/kanch-bc-1.jpg"
+              class="w-full h-56 object-cover"
+              alt="Kanchenjunga Circuit Trek"
+            />
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-800">Kanchenjunga Circuit</h3>
-              <div class="flex justify-between items-center mt-4 text-slate-600 font-medium">
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline mr-1 text-green-600"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg>20-25 Days</span>
-                <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Challenging</span>
+              <h3 class="text-2xl font-bold text-slate-800">
+                Kanchenjunga Circuit
+              </h3>
+              <div
+                class="flex justify-between items-center mt-4 text-slate-600 font-medium"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 inline mr-1 text-green-600"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                      clip-rule="evenodd"
+                    /></svg>20-25 Days</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm"
+                  >Challenging</span
+                >
               </div>
-              <p class="mt-3 text-slate-600">An epic wilderness expedition to the base of the world's third-highest mountain.</p>
-              <a href="#" class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300">View Details</a>
+              <p class="mt-3 text-slate-600">
+                An epic wilderness expedition to the base of the world's
+                third-highest mountain.
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-block w-full text-center bg-green-100 text-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-green-200 transition-colors duration-300"
+                >View Details</a
+              >
             </div>
           </div>
         </div>
@@ -216,63 +672,146 @@
 
     <!-- Footer -->
     <footer class="bg-green-800 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="col-span-1 md:col-span-1"><h3 class="text-2xl font-bold">Nepal<span class="text-green-400">Treks</span></h3><p class="mt-4 text-green-200">Crafting unforgettable Himalayan adventures since 2010.</p></div>
-            <div><h4 class="text-lg font-semibold text-green-300">Quick Links</h4><ul class="mt-4 space-y-2"><li><a href="about.html" class="hover:text-green-400 transition-colors">About Us</a></li><li><a href="packages.html" class="hover:text-green-400 transition-colors">Our Treks</a></li><li><a href="#" class="hover:text-green-400 transition-colors">Gallery</a></li><li><a href="#" class="hover:text-green-400 transition-colors">Contact</a></li></ul></div>
-            <div><h4 class="text-lg font-semibold text-green-300">Contact</h4><ul class="mt-4 space-y-2 text-green-200"><li class="flex items-start"><span class="mr-2 mt-1">✉</span> info@nepaltreks.com</li><li class="flex items-start"><span class="mr-2 mt-1">☎</span> +977 123 456789</li><li class="flex items-start"><span class="mr-2 mt-1"></span> Thamel, Kathmandu, Nepal</li></ul></div>
-            <div><h4 class="text-lg font-semibold text-green-300">Follow Us</h4><div class="mt-4 flex space-x-4"><a href="#" class="text-green-200 hover:text-white transition-colors"><span class="sr-only">Facebook</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a><a href="#" class="text-green-200 hover:text-white transition-colors"><span class="sr-only">Instagram</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" /></svg></a></div></div>
+      <div
+        class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <h3 class="text-2xl font-bold">
+            Nepal<span class="text-green-400">Treks</span>
+          </h3>
+          <p class="mt-4 text-green-200">
+            Crafting unforgettable Himalayan adventures since 2010.
+          </p>
         </div>
-        <div class="mt-8 border-t border-green-700 py-6 text-center text-green-300"><p>© 2025 Nepal Treks. All Rights Reserved. Adventure Awaits.</p></div>
+        <div>
+          <h4 class="text-lg font-semibold text-green-300">Quick Links</h4>
+          <ul class="mt-4 space-y-2">
+            <li>
+              <a
+                href="about.html"
+                class="hover:text-green-400 transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="packages.html"
+                class="hover:text-green-400 transition-colors"
+                >Our Treks</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-green-400 transition-colors"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-green-400 transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-green-300">Contact</h4>
+          <ul class="mt-4 space-y-2 text-green-200">
+            <li class="flex items-start">
+              <span class="mr-2 mt-1">✉</span> info@nepaltreks.com
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 mt-1">☎</span> +977 123 456789
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 mt-1"></span> Belbari, Morang, Nepal
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-green-300">Follow Us</h4>
+          <div class="mt-4 flex space-x-4">
+            <a
+              href="#"
+              class="text-green-200 hover:text-white transition-colors"
+              ><span class="sr-only">Facebook</span
+              ><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"
+                /></svg></a
+            ><a
+              href="#"
+              class="text-green-200 hover:text-white transition-colors"
+              ><span class="sr-only">Instagram</span
+              ><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+                  clip-rule="evenodd"
+                /></svg>
+              </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 border-t border-green-700 py-6 text-center text-green-300"
+      >
+        <p>© 2025 Nepal Treks. All Rights Reserved. Adventure Awaits.</p>
+      </div>
     </footer>
-
 
     <script>
       // --- Mobile Menu Toggle ---
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const menuIcon = document.getElementById('menuIcon');
-      const closeIcon = document.getElementById('closeIcon');
-      menuBtn.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.contains('max-h-96');
-        mobileMenu.classList.toggle('max-h-96', !isOpen);
-        mobileMenu.classList.toggle('max-h-0', isOpen);
-        menuIcon.classList.toggle('hidden', !isOpen);
-        closeIcon.classList.toggle('hidden', isOpen);
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuIcon = document.getElementById("menuIcon");
+      const closeIcon = document.getElementById("closeIcon");
+      menuBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.contains("max-h-96");
+        mobileMenu.classList.toggle("max-h-96", !isOpen);
+        mobileMenu.classList.toggle("max-h-0", isOpen);
+        menuIcon.classList.toggle("hidden", !isOpen);
+        closeIcon.classList.toggle("hidden", isOpen);
       });
 
       // --- Trek Filtering Logic ---
-      const filterContainer = document.getElementById('filter-container');
-      const trekCards = document.querySelectorAll('.trek-card');
-      filterContainer.addEventListener('click', (event) => {
-        const target = event.target.closest('.filter-btn');
+      const filterContainer = document.getElementById("filter-container");
+      const trekCards = document.querySelectorAll(".trek-card");
+      filterContainer.addEventListener("click", (event) => {
+        const target = event.target.closest(".filter-btn");
         if (!target) return;
-        
-        filterContainer.querySelector('.active').classList.remove('active');
-        target.classList.add('active');
-        
+
+        filterContainer.querySelector(".active").classList.remove("active");
+        target.classList.add("active");
+
         const filter = target.dataset.filter;
-        
-        trekCards.forEach(card => {
+
+        trekCards.forEach((card) => {
           const categories = card.dataset.category; // e.g., "challenging remote"
           // Show card if filter is 'all' OR the card's categories include the filter
-          if (filter === 'all' || categories.includes(filter)) {
-            card.style.display = 'block';
+          if (filter === "all" || categories.includes(filter)) {
+            card.style.display = "block";
           } else {
-            card.style.display = 'none';
+            card.style.display = "none";
           }
         });
       });
 
       // --- Scroll Animation ---
-      const scrollElements = document.querySelectorAll('.animate-on-scroll');
-      const elementInView = (el) => el.getBoundingClientRect().top <= (window.innerHeight || document.documentElement.clientHeight) / 1.1;
-      const displayScrollElement = (element) => element.classList.add('is-visible');
+      const scrollElements = document.querySelectorAll(".animate-on-scroll");
+      const elementInView = (el) =>
+        el.getBoundingClientRect().top <=
+        (window.innerHeight || document.documentElement.clientHeight) / 1.1;
+      const displayScrollElement = (element) =>
+        element.classList.add("is-visible");
       const handleScrollAnimation = () => {
         scrollElements.forEach((el) => {
-          if (elementInView(el)) { displayScrollElement(el); }
+          if (elementInView(el)) {
+            displayScrollElement(el);
+          }
         });
       };
-      window.addEventListener('scroll', handleScrollAnimation);
+      window.addEventListener("scroll", handleScrollAnimation);
       handleScrollAnimation();
     </script>
   </body>
